@@ -1,11 +1,10 @@
+from flask import Flask, render_template
 
-from flask import Flask
-app = Flask(_name_)
+app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
 def home():
-    return "Welcome to Jenkins + Docker Integration!"
+    return render_template("index.html")
 
-if _name_ == "_main_":
-    app.run(host="0.0.0.0", port=8080)
-
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080):

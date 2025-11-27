@@ -1,5 +1,174 @@
-<html>
-  <body>
-    <h1>Hello from Docker + Jenkins CI/CD Pipeline!</h1>
-  </body>
-</html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nuel Global - Flyer</title>
+  <style>
+    :root{
+      --blue-dark:#083e63;
+      --blue-mid:#0f73a8;
+      --blue-light:#67c1e6;
+      --accent:#f79a1f;
+      --card-width:900px;
+    }
+    body{
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg,#e6f6fb 0%, #cdeff9 35%, #e8f7ff 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+      margin:0;
+      padding:20px;
+    }
+
+    .flyer{
+      width:100%;
+      max-width:var(--card-width);
+      background:linear-gradient(180deg,#e9f6fb 0%, #cdebf7 100%);
+      border-radius:10px;
+      box-shadow:0 10px 30px rgba(3,15,30,0.15);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:0;
+    }
+
+    /* Left column */
+    .left{
+      padding:28px;
+      background:linear-gradient(180deg,var(--blue-light), #9fdff6);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      color:white;
+      position:relative;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo img{ height:56px; width:auto; }
+    .logo .brand{
+      font-weight:700;
+      font-size:22px;
+      letter-spacing:0.5px;
+    }
+    .logo .tag{ font-size:12px; opacity:0.95; margin-top:-4px; }
+
+    .round-photo{
+      margin-top:18px;
+      width:240px;
+      height:240px;
+      border-radius:50%;
+      overflow:hidden;
+      border:10px solid rgba(2,45,77,0.6);
+      box-shadow:0 6px 20px rgba(2,45,77,0.18);
+      align-self:center;
+      background:#fff;
+    }
+    .round-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    .cta-left{
+      margin-top:20px;
+      font-weight:700;
+      font-size:22px;
+      line-height:1.1;
+      text-align:center;
+      text-transform:uppercase;
+      letter-spacing:0.6px;
+    }
+
+    .left-footer{
+      margin-top:20px;
+      font-weight:700;
+      color:#01263f;
+      font-size:20px;
+      text-align:center;
+      background:rgba(255,255,255,0.12);
+      padding:10px;
+      border-radius:8px;
+    }
+
+    /* Right column */
+    .right{
+      padding:28px;
+      background:linear-gradient(180deg,#f4f7fa 0%, #e8f1f7 100%);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .headline{
+      background:var(--blue-dark);
+      color:white;
+      padding:22px;
+      border-radius:6px;
+      font-weight:800;
+      font-size:28px;
+      line-height:1.05;
+      text-transform:uppercase;
+      text-align:left;
+    }
+
+    .qr-wrap{
+      display:flex;
+      gap:18px;
+      margin-top:18px;
+      align-items:center;
+    }
+
+    .qr-img{
+      width:230px;
+      height:230px;
+      background:#fff;
+      padding:12px;
+      border-radius:8px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .qr-img img{ width:100%; height:100%; object-fit:contain; display:block; }
+
+    .right-text{
+      flex:1;
+      font-weight:700;
+      color:var(--blue-dark);
+      padding-left:8px;
+    }
+    .right-text .top-line{
+      font-size:20px;
+      color:#13425a;
+      text-transform:uppercase;
+    }
+    .right-text .big{
+      font-size:28px;
+      margin-top:10px;
+      color:var(--blue-dark);
+    }
+    .right-text p{
+      margin:8px 0 0;
+      font-size:14px;
+      font-weight:700;
+      color:#0e3b50;
+    }
+
+    .contact-bar{
+      margin-top:18px;
+      background:var(--blue-dark);
+      color:white;
+      padding:16px;
+      border-radius:8px;
+      display:flex;
+      gap:20px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .contact-item{ display:flex; gap:10px; align-items:center; }
+    .contact-item svg{ width:20px; height:20px; opacity:0.95; }
+    .contact-item
